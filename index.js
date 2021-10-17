@@ -21,7 +21,7 @@ const init = () => {
     .addCondition(filterRules.minimumComments(10))
     .addCondition(filterRules.minimumViews(9000))
     .addCondition(filterRules.maxPostLength(40))
-    .run(['id'], args.isDetailedMode);
+    .run(['id'], args.isDetailedMode); // Returns entire object if "--detailed" arg provided. Otherwise, returns only the id
 
   const dailyTopPosts = dailyPosts.findDailyTopPosts(posts, 'likes'); // <- tracking metric is "likes"
 
