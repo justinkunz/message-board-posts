@@ -10,6 +10,8 @@ const organizeByDay = (posts) => {
   return posts.reduce((postsByDay, post) => {
     const formattedDate = dates.formatDate(post.timestamp);
 
+    // This adds a post to it's relevent date array if that array already exists
+    // Otherwise, it adds a key for the posts date to the tracked object
     if (postsByDay[formattedDate]) {
       postsByDay[formattedDate].push(post);
     } else {
