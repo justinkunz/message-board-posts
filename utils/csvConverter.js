@@ -11,6 +11,12 @@ const parseCsv = (data) => {
   const rows = data.trim().split('\n');
   const headers = rows.shift().split(REGEX.CSV_DELIMITER);
 
+  /**
+   * Formats CSV string value as a number or date
+   * where applicable
+   *
+   * @param {String} val CSV value to format
+   */
   const format = (val) => {
     // Number() is better than parseInt() here
     // because parseInt() will parse out numbers contained in string
